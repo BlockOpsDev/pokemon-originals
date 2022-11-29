@@ -1,1 +1,1 @@
-# Pokemon Orginals
+# Pokemon Originals

@@ -13,7 +13,8 @@
 		"vscode": {
 			"settings": {},
 			"extensions": [
-				"dbaeumer.vscode-eslint"
+				"dbaeumer.vscode-eslint",
+				"NomicFoundation.hardhat-solidity"
 			]
 		}
 	},

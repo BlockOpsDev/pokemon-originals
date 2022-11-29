@@ -18,7 +18,9 @@
 		}
 	},
 	// Use 'forwardPorts' to make a list of ports inside the container available locally.
-	// "forwardPorts": [3000],
+	"forwardPorts": [
+		3000
+	]
 	// Use 'portsAttributes' to set default properties for specific forwarded ports.
 	// 	"portsAttributes": {
 	// 		"3000": {

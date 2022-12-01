@@ -14,7 +14,9 @@
 			"settings": {},
 			"extensions": [
 				"dbaeumer.vscode-eslint",
-				"NomicFoundation.hardhat-solidity"
+				"NomicFoundation.hardhat-solidity",
+				"bradlc.vscode-tailwindcss",
+				"GitHub.copilot"
 			]
 		}
 	},

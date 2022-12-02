@@ -17,9 +17,6 @@ jobs:
       - name: Install Vercel CLI
         run: pnpm install --global vercel
 
-      - name: Install dependencies
-        run: pnpm install
-
       - name: Pull Vercel Environment Information
         run: vercel pull --yes --environment=production --token=${{ secrets.VERCEL_TOKEN }}
 

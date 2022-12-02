@@ -9,8 +9,11 @@ on:
 jobs:
   Deploy-Production:
     runs-on: ubuntu-latest
+    container: mcr.microsoft.com/devcontainers/javascript-node:16-bullseye
     steps:
       - uses: actions/checkout@v2
+      - name: Install pnpm
+        run: npm install -g pnpm
       - name: Install Vercel CLI
         run: pnpm install --global vercel
       - name: Pull Vercel Environment Information

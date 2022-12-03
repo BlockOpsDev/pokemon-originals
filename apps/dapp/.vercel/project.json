@@ -1,5 +1,5 @@
 {
-  "projectId": "$VERCEL_PROJECT_ID",
+  "projectId": "",
   "orgId": "$VERCEL_ORG_ID",
   "settings": {
     "createdAt": 1669996333256,

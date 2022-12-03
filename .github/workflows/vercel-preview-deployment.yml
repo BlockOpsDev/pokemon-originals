@@ -36,14 +36,10 @@ jobs:
           working-directory: apps/dapp
           vercel-args: --prebuilt --yes
 
-      # - name: Set Date
-      #   run: echo "date=$(date + '%b %d, %Y @ %I:%M %p (UTC)')" >> $GITHUB_ENV
-
       - name: Vercel Status Comment
         uses: actions/github-script@v5
         with:
-          github-token: ${{secrets.GITHUB_TOKEN}}
-          script: |
+          script: | 
             github.rest.issues.createComment({
               issue_number: context.issue.number,
               owner: context.repo.owner,

@@ -18,10 +18,10 @@ jobs:
       - name: Install PNPM
         uses: pnpm/action-setup@v2
 
-      - name: Next Build
+      - name: Vercel Build
         run: |
-          pnpm install
-          pnpm run build
+          pnpm install --global vercel
+          vercel build
 
       - name: Vercel Deploy
         uses: amondnet/vercel-action@v20

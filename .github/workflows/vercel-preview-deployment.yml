@@ -52,6 +52,6 @@ jobs:
                 **Vercel Deployment**
                 |Name|Status|Preview|Timestamp|
                 |--|--|--|--|
-                |dapp|✅Active|[Vist Preview](${{ steps.vercel_deployment.outputs.preview-url }})||
+                |dapp|✅Active|[Vist Preview]()||
                 '
             })

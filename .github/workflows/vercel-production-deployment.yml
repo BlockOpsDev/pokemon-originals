@@ -18,10 +18,10 @@ jobs:
       - name: Install PNPM
         uses: pnpm/action-setup@v2
 
-      - name: Vercel Build
+      - name: Vercel Production Build
         run: |
           pnpm install --global vercel
-          vercel build --cwd apps/dapp
+          vercel build --cwd apps/dapp --prod
 
       - name: Vercel Deploy
         uses: amondnet/vercel-action@v20

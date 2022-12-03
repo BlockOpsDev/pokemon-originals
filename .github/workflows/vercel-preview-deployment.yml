@@ -44,5 +44,5 @@ jobs:
               issue_number: context.issue.number,
               owner: context.repo.owner,
               repo: context.repo.repo,
-              body: '🚀 Preview Deployment: ' + ${{ steps.vercel_deployment.outputs.preview-url }}
+              body: '🚀 Preview Deployment: '
             })

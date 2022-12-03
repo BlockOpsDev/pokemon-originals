@@ -1,5 +1,6 @@
 {
-    "buildCommand": "next build",
+    "buildCommand": "cd ../.. && pnpm build",
+    "installCommand": "cd ../.. && pnpm install",
     "builds": [
         { "src": "{{Source for distribution}}", "use": "@vercel/static" }
     ]

@@ -10,7 +10,7 @@ on:
       - main
 
 jobs:
-  vercel-deployment:
+  vercel-production-deployment:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
@@ -39,23 +39,3 @@ jobs:
           # Vercel Configuration
           working-directory: apps/dapp
           vercel-args: --prod --prebuilt --yes
-
-
-  # Deploy-Production:
-  #   runs-on: ubuntu-latest
-  #   container: mcr.microsoft.com/devcontainers/javascript-node:16-bullseye
-  #   steps:
-  #     - uses: actions/checkout@v2
-  #     - uses: pnpm/action-setup@v2
-
-  #     - name: Install Vercel CLI
-  #       run: pnpm install --global vercel
-
-  #     - name: Pull Vercel Environment Information
-  #       run: vercel pull --yes --environment=production --token=${{ secrets.VERCEL_TOKEN }}
-
-  #     - name: Build Project Artifacts
-  #       run: vercel build --prod --token=${{ secrets.VERCEL_TOKEN }}
-
-  #     - name: Deploy Project Artifacts to Vercel
-  #       run: vercel deploy --prebuilt --prod --token=${{ secrets.VERCEL_TOKEN }}

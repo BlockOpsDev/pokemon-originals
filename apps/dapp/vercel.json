@@ -1,6 +1,8 @@
 {
-  "framework": "",
-  "buildCommand": "",
+  "bulids": [
+    { "src": "index.html", "use": "@vercel/static" },
+    { "src": "api/**/*.js", "use": "@vercel/node" }
+  ],
 
     "version": 2,
     "public": false,

@@ -36,8 +36,8 @@ jobs:
           working-directory: apps/dapp
           vercel-args: --prebuilt --yes
 
-      - name: Set Date
-        run: echo "date=$(date + '%b %d, %Y @ %I:%M %p (UTC)')" >> $GITHUB_ENV
+      # - name: Set Date
+      #   run: echo "date=$(date + '%b %d, %Y @ %I:%M %p (UTC)')" >> $GITHUB_ENV
 
       - name: Vercel Status Comment
         uses: actions/github-script@v5
@@ -48,8 +48,10 @@ jobs:
               issue_number: context.issue.number,
               owner: context.repo.owner,
               repo: context.repo.repo,
-              body: '**Vercel Deployment**
+              body: '
+                **Vercel Deployment**
                 |Name|Status|Preview|Timestamp|
                 |--|--|--|--|
-                |dapp|✅Active|[Vist Preview](${{ steps.vercel_deployment.outputs.preview-url }})|${{ env.date }}|'
+                |dapp|✅Active|[Vist Preview](${{ steps.vercel_deployment.outputs.preview-url }})||
+                '
             })

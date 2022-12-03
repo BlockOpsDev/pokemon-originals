@@ -48,10 +48,5 @@ jobs:
               issue_number: context.issue.number,
               owner: context.repo.owner,
               repo: context.repo.repo,
-              body: '
-                **Vercel Deployment**
-                |Name|Status|Preview|Timestamp|
-                |--|--|--|--|
-                |dapp|✅Active|[Vist Preview]()||
-                '
+              body: '🚀 Preview Deployment: ' + ${{ steps.vercel_deployment.outputs.preview-url }}
             })

@@ -37,8 +37,8 @@ jobs:
           vercel-project-id: ${{ secrets.VERCEL_PROJECT_ID }}
 
           # Vercel Configuration
-          working-directory: ./
-          vercel-args: --prod --confirm
+          # working-directory: ./
+          vercel-args: --prod --prebuilt --yes
 
 
   # Deploy-Production:

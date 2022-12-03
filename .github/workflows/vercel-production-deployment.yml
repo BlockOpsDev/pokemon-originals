@@ -14,9 +14,19 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
-      - uses: amondnet/vercel-action@v20
+
+      - name: Install PNPM
+        uses: pnpm/action-setup@v2
+
+      - name: Next Bulid
+        run: |
+          pnpm install
+          pnpm run build
+
+      - name: Vercel Deploy
+        uses: amondnet/vercel-action@v20
         with:
-          # Deploymet State Coment
+          # Github Issue Config
           # github-token: ${{ secrets.GITHUB_TOKEN }
           # github-comment: true
 
@@ -26,7 +36,7 @@ jobs:
           scope: ${{ secrets.VERCEL_ORG_ID }}
           vercel-project-id: ${{ secrets.VERCEL_PROJECT_ID }}
 
-          # Vercel Deployment Options
+          # Vercel Configuration
           working-directory: ./
           vercel-args: --prod --confirm
 

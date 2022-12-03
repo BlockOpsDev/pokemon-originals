@@ -1,7 +1,13 @@
 {
     "framework": "nextjs",
     "buildCommand": "cd ../.. && pnpm build",
-    "installCommand": "cd ../.. && pnpm install"
+    "installCommand": "cd ../.. && pnpm install",
+
+    "version": 2,
+    "public": false,
+    "github": {
+      "enabled": false
+    }
 }
 
 

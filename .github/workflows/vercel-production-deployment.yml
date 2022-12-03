@@ -18,7 +18,7 @@ jobs:
       - name: Install PNPM
         uses: pnpm/action-setup@v2
 
-      - name: Next Bulid
+      - name: Next Build
         run: |
           pnpm install
           pnpm run build

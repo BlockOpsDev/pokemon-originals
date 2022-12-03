@@ -37,7 +37,7 @@ jobs:
           vercel-project-id: ${{ secrets.VERCEL_PROJECT_ID }}
 
           # Vercel Configuration
-          # working-directory: ./
+          working-directory: apps/dapp
           vercel-args: --prod --prebuilt --yes
 
 

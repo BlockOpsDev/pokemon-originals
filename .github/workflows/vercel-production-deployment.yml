@@ -21,7 +21,7 @@ jobs:
       - name: Vercel Build
         run: |
           pnpm install --global vercel
-          vercel build
+          vercel build --cwd apps/dapp
 
       - name: Vercel Deploy
         uses: amondnet/vercel-action@v20

@@ -1,7 +1,6 @@
 {
-    "builds": [
-      { "src": "apps/dapp", "use": "@vercel/static" }
-    ],
+  "framework": "other",
+  "buildCommand": "",
 
     "version": 2,
     "public": false,

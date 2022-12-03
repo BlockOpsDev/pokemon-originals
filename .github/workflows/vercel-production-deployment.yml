@@ -1,8 +1,8 @@
 name: Vercel Production Deployment
 
-# env:
-#   VERCEL_ORG_ID: ${{ secrets.VERCEL_ORG_ID }}
-#   VERCEL_PROJECT_ID: ${{ secrets.VERCEL_PROJECT_ID }}
+env:
+  VERCEL_ORG_ID: ${{ secrets.VERCEL_ORG_ID }}
+  VERCEL_PROJECT_ID: ${{ secrets.VERCEL_PROJECT_ID }}
 
 on:
   push:
@@ -21,7 +21,7 @@ jobs:
       - name: Vercel Build
         run: |
           pnpm install --global vercel
-          vercel build --local-config apps/dapp/vercel.json
+          vercel build --cwd apps/dapp
 
       - name: Vercel Deploy
         uses: amondnet/vercel-action@v20

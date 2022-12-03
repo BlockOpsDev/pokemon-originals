@@ -1,0 +1,3 @@
+#Vercel
+.vercel/*
+!.vercel/project.json

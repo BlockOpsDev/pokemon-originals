@@ -16,18 +16,23 @@
 				"dbaeumer.vscode-eslint",
 				"NomicFoundation.hardhat-solidity",
 				"bradlc.vscode-tailwindcss",
-				"GitHub.copilot"
+				"GitHub.copilot",
+				"esbenp.prettier-vscode"
 			]
 		}
 	},
 	// Use 'forwardPorts' to make a list of ports inside the container available locally.
 	"forwardPorts": [
-		3000
+		3000,
+		8545
 	],
 	// Use 'portsAttributes' to set default properties for specific forwarded ports.
 	"portsAttributes": {
 		"3000": {
-			"label": "Frontend"
+			"label": "Frontend Dapp"
+		},
+		"8545": {
+			"label": "Ethereum RPC"
 		}
 	},
 	// Use 'postCreateCommand' to run commands after the container is created.

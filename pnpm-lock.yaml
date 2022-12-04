@@ -53,6 +53,7 @@ importers:
       '@nomicfoundation/hardhat-toolbox': ^2.0.0
       '@nomiclabs/hardhat-ethers': ^2.2.1
       '@nomiclabs/hardhat-etherscan': ^3.1.2
+      '@openzeppelin/contracts': ^4.8.0
       '@typechain/ethers-v5': ^10.1.1
       '@typechain/hardhat': ^6.1.4
       '@types/chai': ^4.3.4
@@ -66,6 +67,8 @@ importers:
       ts-node: ^10.9.1
       typechain: ^8.1.1
       typescript: ^4.9.3
+    dependencies:
+      '@openzeppelin/contracts': 4.8.0
     devDependencies:
       '@ethersproject/abi': 5.7.0
       '@ethersproject/bytes': 5.7.0
@@ -1018,6 +1021,10 @@ packages:
     transitivePeerDependencies:
       - supports-color
     dev: true
+
+  /@openzeppelin/contracts/4.8.0:
+    resolution: {integrity: sha512-AGuwhRRL+NaKx73WKRNzeCxOCOCxpaqF+kp8TJ89QzAipSwZy/NoflkWaL9bywXFRhIzXt8j38sfF7KBKCPWLw==}
+    dev: false
 
   /@pkgr/utils/2.3.1:
     resolution: {integrity: sha512-wfzX8kc1PMyUILA+1Z/EqoE4UCXGy0iRGMhPwdfae1+f0OXlLqCk+By+aMzgJBzR9AzS4CDizioG6Ss1gvAFJw==}

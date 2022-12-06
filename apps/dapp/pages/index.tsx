@@ -1,21 +1,21 @@
-import { useState, useEffect } from 'react'
-import { Button } from '@acme/ui'
-import { matchingTextColor, randomColor } from '@acme/utils'
+// import { useState, useEffect } from 'react'
+// import { Button } from '@acme/ui'
+// import { matchingTextColor, randomColor } from '@acme/utils'
 
 export default function Index() {
-  const [bgColor, setBgColor] = useState('')
-  const [textColor, setTextColor] = useState('')
-  const changeColor = () => {
-    const bg = randomColor()
-    setBgColor(bg)
-    setTextColor(matchingTextColor(bg))
-  }
+//   const [bgColor, setBgColor] = useState('')
+//   const [textColor, setTextColor] = useState('')
+//   const changeColor = () => {
+//     const bg = randomColor()
+//     setBgColor(bg)
+//     setTextColor(matchingTextColor(bg))
+//   }
 
-  useEffect(changeColor, [])
+//   useEffect(changeColor, [])
 
   return (
     <div>
-      {bgColor && textColor && (
+      {/* {bgColor && textColor && (
         <>
           <div className='h-12 bg-black text-white flex justify-center items-center'>Test</div>
           <Button
@@ -29,7 +29,7 @@ export default function Index() {
             Change Color
           </Button>
         </>
-      )}
+      )} */}
     </div>
   )
 }

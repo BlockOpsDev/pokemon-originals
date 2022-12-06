@@ -11,9 +11,17 @@ This is the monorepo for the Pokemon Originals Airdrop managed with [Turborepo](
 
 This is monorepo is design to be run entirely in [Github Codespaces](https://github.com/features/codespaces).
 
+## Install Dependencies
+
 ```bash
-# Launch Hardhat node @ http://localhost:8545
-# Launch Cloudflare Workers KV @ http://localhost:?
+# Not required if using Github Codespaces
+Install pnpm
+```
+
+## Run Locally
+
+```bash
+# Launch Hardhat node @ http://localhost:8545 & compiles contracts
 # Launch Next.js app @ http://localhost:3000 with hot reaload
 pnpm dev
 ```
@@ -22,9 +30,21 @@ pnpm dev
 
 Various frameworks/libraries/utilities used throughout the monorepo.
 
-- [Next.js](https://nextjs.org/) React framework
-- [Tailwind CSS](https://tailwindcss.com/) for styles
-- [TypeScript](https://www.typescriptlang.org/) for static type checking
-- [ESLint](https://eslint.org/) for code linting
-- [Prettier](https://prettier.io) for code formatting
+**Frontend**
+
+- [React](https://reactjs.org/) for frontend libary
+- [Next.js](https://nextjs.org/) for frontend framework
+- [Wagmi](https://wagmi.sh/) for ethereum integration
+- [Tailwind CSS](https://tailwindcss.com/) for styling
+
+**Ethereum**
+
 - [Hardhat](https://hardhat.org/) for solidity development
+- [merkle-distributor](https://github.com/Uniswap/merkle-distributor) for airdrop distribution
+
+**Repository**
+
+- [TypeScript](https://www.typescriptlang.org/) for static type checking
+- [Turborepo](https://turborepo.org/) for monorepo management
+- [Prettier](https://prettier.io) for code formatting
+- [ESLint](https://eslint.org/) for linting

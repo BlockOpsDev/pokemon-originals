@@ -12,9 +12,15 @@
   "dependencies": {
     "@acme/ui": "workspace:*",
     "@acme/utils": "workspace:*",
+    "@babel/core": ">=7.4.0 <8.0.0",
+    "@babel/preset-env": "^7.1.6",
+    "@tanstack/query-core": "4.19.1",
+    "ethers": "^5.7.2",
     "next": "canary",
     "react": "latest",
-    "react-dom": "latest"
+    "react-dom": "latest",
+    "react-native": "*",
+    "wagmi": "^0.8.10"
   },
   "devDependencies": {
     "@types/node": "^18.0.0",

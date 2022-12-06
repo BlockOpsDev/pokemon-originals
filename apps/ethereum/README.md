@@ -1,13 +1,12 @@
-# Sample Hardhat Project
+# Merkle Distrubutor
 
-This project demonstrates a basic Hardhat use case. It comes with a sample contract, a test for that contract, and a script that deploys that contract.
+This contract is a fork of [merkle-distributor](https://github.com/Uniswap/merkle-distributor) by [Uniswap](https://uniswap.org/).
 
-Try running some of the following tasks:
+# Getting Started
 
-```shell
-npx hardhat help
-npx hardhat test
-REPORT_GAS=true npx hardhat test
-npx hardhat node
-npx hardhat run scripts/deploy.ts
+## Run Locally
+
+```bash
+# Launch Hardhat node @ http://localhost:8545 & compiles contracts
+pnpm -F ethereum dev
 ```

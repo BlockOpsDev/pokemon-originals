@@ -11,14 +11,14 @@ This is the monorepo for the Pokemon Originals Airdrop managed with [Turborepo](
 
 This is monorepo is design to be run entirely in [Github Codespaces](https://github.com/features/codespaces).
 
-## Install Dependencies
+**Install Dependencies**
 
 ```bash
 # Not required if using Github Codespaces
 Install pnpm
 ```
 
-## Run Locally
+**Run Locally**
 
 ```bash
 # Launch Hardhat node @ http://localhost:8545 & compiles contracts
@@ -40,7 +40,7 @@ Various frameworks/libraries/utilities used throughout the monorepo.
 **Ethereum**
 
 - [Hardhat](https://hardhat.org/) for solidity development
-- [merkle-distributor](https://github.com/Uniswap/merkle-distributor) for airdrop distribution
+- [Merkle-Distributor](https://github.com/Uniswap/merkle-distributor) for airdrop distribution
 
 **Repository**
 

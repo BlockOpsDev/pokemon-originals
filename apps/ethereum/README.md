@@ -4,7 +4,7 @@ This contract is a fork of [merkle-distributor](https://github.com/Uniswap/merkl
 
 # Getting Started
 
-## Run Locally
+**Run Locally**
 
 ```bash
 # Launch Hardhat node @ http://localhost:8545 & compiles contracts

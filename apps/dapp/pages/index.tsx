@@ -7,9 +7,9 @@ import { useAccount, useConnect } from "wagmi";
 
 export default function Index() {
   const { address, isConnected } = useAccount();
-  const { isLoading } = useConnect();
-  const claimData = useClaim();
-  const { open } = useModal();
+  // const { isLoading } = useConnect();
+  // const claimData = useClaim();
+  // const { open } = useModal();
 
   return (
     <>

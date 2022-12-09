@@ -5,14 +5,14 @@ import useClaim from "../../hooks/useClaim";
 // Claim component:
 const ClaimCard = () => {
   // Claim hook:
-  const { claimTx, isLoading, isEligible, isClaimed } = useClaim();
+  const { claim, isLoading, isEligible, isClaimed, isClaiming } = useClaim();
   // render claim button
   return (
     <Button
       message={isEligible ? (isClaimed ? "Claimed" : "Claim") : "Ineligible"}
-      onClick={claimTx}
-      isLoading={isLoading}
-      isEnabled={!isClaimed}
+      onClick={claim}
+      isLoading={isLoading || isClaiming}
+      isEnabled={!isClaimed && isEligible}
     />
   );
 };

@@ -1,21 +1,39 @@
-import { useAccount, useConnect, useDisconnect } from "wagmi";
-import { InjectedConnector } from "wagmi/connectors/injected";
+import React from "react";
+import { ConnectKitButton, useModal } from "connectkit";
+import Button from "./primaryButton";
 
-export default function Connect() {
-  const { address, isConnected } = useAccount();
-  const { connect } = useConnect({
-    connector: new InjectedConnector(),
-  });
-  const { disconnect } = useDisconnect();
+interface Props {
+  connectMessage?: string;
+}
+
+const Connect: React.FC<Props> = ({ connectMessage }) => {
+  const { open } = useModal();
 
   return (
-    <button
-      className="bg-blue-600 text-white rounded-lg px-4 py-2 hover:bg-blue-700"
-      onClick={() => (isConnected ? disconnect() : connect())}
-    >
-      {isConnected && address
-        ? `${address.slice(0, 4)}...${address.slice(-4)}`
-        : "Connect"}
-    </button>
+    <ConnectKitButton.Custom>
+      {({
+        isConnected,
+        isConnecting,
+        show,
+        address,
+        ensName,
+        truncatedAddress,
+      }) => {
+        return (
+          <Button
+            message={
+              isConnected && address
+                ? ensName ?? truncatedAddress!
+                : connectMessage ?? "Connect"
+            }
+            isLoading={(!isConnected || !address) && (isConnecting || open)}
+            isEnabled={true}
+            onClick={show}
+          />
+        );
+      }}
+    </ConnectKitButton.Custom>
   );
-}
+};
+
+export default Connect;

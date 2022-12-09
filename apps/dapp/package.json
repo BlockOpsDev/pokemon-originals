@@ -15,10 +15,13 @@
     "@babel/core": ">=7.4.0 <8.0.0",
     "@babel/preset-env": "^7.1.6",
     "@tanstack/query-core": "4.19.1",
+    "@wagmi/core": "^0.8.1",
+    "connectkit": "^1.1.0",
     "ethers": "^5.7.2",
     "next": "canary",
     "react": "latest",
     "react-dom": "latest",
+    "react-is": ">= 16.8.0",
     "react-native": "*",
     "wagmi": "^0.8.10"
   },

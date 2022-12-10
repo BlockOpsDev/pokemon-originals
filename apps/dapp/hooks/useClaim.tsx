@@ -1,4 +1,4 @@
-import { useCallback, useEffect, useReducer } from "react";
+import { useCallback, useEffect, useReducer, useState } from "react";
 import { useAccount, useContractWrite, usePrepareContractWrite } from "wagmi";
 import { BigNumber } from "ethers";
 import { claimABI } from "./claimABI";
@@ -30,7 +30,7 @@ async function getClaimData(address: string): Promise<ClaimData> {
   const claimData = await response.json();
   return claimData.leaf && claimData.nfts
     ? claimData
-    : { leaf: null, nfts: {} };
+    : { leaf: null, nfts: null };
 }
 
 type claimArgs = readonly [
@@ -43,7 +43,6 @@ type claimArgs = readonly [
 // Claim state interface:
 interface ClaimState {
   claimData?: ClaimData;
-  args?: claimArgs;
   error?: Error;
   isLoading: boolean;
   isClaiming: boolean;
@@ -66,7 +65,7 @@ type ClaimAction =
   | { type: "reset" }
   | { type: "claim" }
   | { type: "claimed" }
-  | { type: "eligible"; args: claimArgs }
+  | { type: "eligible" }
   | { type: "ineligible" }
   | { type: "claiming" }
   | { type: "error"; error: Error };
@@ -83,7 +82,7 @@ function claimReducer(state: ClaimState, action: ClaimAction) {
     case "claimed":
       return { ...state, isClaimed: true, isClaiming: false, isLoading: false };
     case "eligible":
-      return { ...state, isEligible: true, args: action.args };
+      return { ...state, isEligible: true };
     case "ineligible":
       return { ...state, isEligible: false, isLoading: false };
     case "error":
@@ -101,24 +100,25 @@ function claimReducer(state: ClaimState, action: ClaimAction) {
 
 // Custom react hook for getting claim data:
 export default function useClaim(): ClaimState & {
-  claim: () => Promise<void>;
+  claim: () => void;
 } {
-  // Claim reducer:
-  const [state, dispatch] = useReducer(claimReducer, initialClaimState);
-  // Wagmi account hook:
   const { address, isConnected } = useAccount();
+
+  const [state, dispatch] = useReducer(claimReducer, initialClaimState);
+  const [claimArgs, setClaimArgs] = useState<claimArgs>();
 
   const { config, refetch } = usePrepareContractWrite({
     address: "0xe7f1725E7734CE288F8367e1Bb143E90bb3F0512",
     abi: claimABI,
     functionName: "claim",
-    args: state.args,
+    args: claimArgs,
     enabled: false,
   });
 
   const { writeAsync } = useContractWrite(config);
 
-  const claim = useCallback(async (): Promise<void> => {
+  // Claim function:
+  const claim = useCallback((): void => {
     if (writeAsync) {
       dispatch({ type: "claiming" });
 
@@ -135,23 +135,20 @@ export default function useClaim(): ClaimState & {
   }, [writeAsync]);
 
   useEffect(() => {
-    async function checkClaimData() {
-      if (state.args) {
-        refetch({ throwOnError: true })
-          .then(() => {
-            dispatch({ type: "claim" });
-          })
-          .catch((e) => {
-            if (e.reason && e.reason.includes("AlreadyClaimed")) {
-              dispatch({ type: "claimed" });
-            } else {
-              dispatch({ type: "error", error: e });
-            }
-          });
-      }
+    if (claimArgs) {
+      refetch({ throwOnError: true })
+        .then(() => {
+          dispatch({ type: "claim" });
+        })
+        .catch((e) => {
+          if (e.reason && e.reason.includes("AlreadyClaimed")) {
+            dispatch({ type: "claimed" });
+          } else {
+            dispatch({ type: "error", error: e });
+          }
+        });
     }
-    checkClaimData();
-  }, [state.args, refetch]);
+  }, [claimArgs, refetch]);
 
   // Check claim data on mount and when account changes:
   useEffect(() => {
@@ -163,13 +160,13 @@ export default function useClaim(): ClaimState & {
         if (claimData.leaf) {
           dispatch({
             type: "eligible",
-            args: [
-              BigNumber.from(claimData.leaf.index),
-              address,
-              BigNumber.from(claimData.leaf.amount),
-              claimData.leaf.proof,
-            ],
           });
+          setClaimArgs([
+            BigNumber.from(claimData.leaf.index),
+            address,
+            BigNumber.from(claimData.leaf.amount),
+            claimData.leaf.proof,
+          ]);
         } else {
           dispatch({ type: "ineligible" });
         }

@@ -1,4 +1,4 @@
-import ClaimCard from "@components/claim/claim";
+import ClaimCard from "@components/ClaimCard/card";
 import Connect from "@components/connect";
 import Button from "@components/primaryButton";
 import { useModal } from "connectkit";
@@ -15,7 +15,7 @@ export default function Index() {
     <>
       <Connect />
       {isConnected && address ? (
-        <ClaimCard />
+        <ClaimCard address={address} />
       ) : (
         <Connect connectMessage="Check Eligibility" />
       )}

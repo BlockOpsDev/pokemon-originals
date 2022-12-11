@@ -15,10 +15,8 @@ const Button: React.FC<Props> = ({
 }) => {
   return (
     <button
-      className={`bg-black px-4 py-2 rounded-lg w-full h-full font-extrabold font-roboto flex items-center justify-center ${
-        isEnabled && !isLoading
-          ? "text-white hover:bg-opacity-60"
-          : "bg-opacity-60"
+      className={`bg-black text-white px-4 py-2 rounded-lg w-full h-full font-extrabold font-roboto flex items-center justify-center ${
+        isEnabled && !isLoading ? "hover:bg-opacity-60" : "bg-opacity-60"
       }`}
       disabled={!isEnabled}
       onClick={onClick}

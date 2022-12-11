@@ -24,7 +24,7 @@ const Connect: React.FC<Props> = ({ connectMessage }) => {
             message={
               isConnected && address
                 ? ensName ?? truncatedAddress!
-                : connectMessage ?? "Connect"
+                : connectMessage ?? "Connect Wallet"
             }
             isLoading={(!isConnected || !address) && (isConnecting || open)}
             isEnabled={true}

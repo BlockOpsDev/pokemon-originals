@@ -7,6 +7,8 @@ import { publicProvider } from "wagmi/providers/public";
 import { MetaMaskConnector } from "wagmi/connectors/metaMask";
 import { WalletConnectConnector } from "wagmi/connectors/walletConnect";
 
+import { ConnectKitProvider } from "connectkit";
+
 const { chains, provider, webSocketProvider } = configureChains(
   [localhost],
   [publicProvider()]
@@ -28,7 +30,9 @@ const client = createClient({
 export default function MyApp({ Component, pageProps }: AppProps) {
   return (
     <WagmiConfig client={client}>
-      <Component {...pageProps} />
+      <ConnectKitProvider>
+        <Component {...pageProps} />
+      </ConnectKitProvider>
     </WagmiConfig>
   );
 }

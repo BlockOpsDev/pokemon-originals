@@ -1,5 +1,3 @@
-const colors = require("tailwindcss/colors");
-
 module.exports = {
   content: [
     // app content
@@ -9,11 +7,15 @@ module.exports = {
   ],
   theme: {
     extend: {
-      colors: {
-        brandblue: colors.blue[500],
-        brandred: colors.red[500],
+      fontFamily: {
+        'poppins': "'Poppins'",
+        'roboto': "'Roboto'",
       },
+      colors: {
+        "secondary-text": "#7B7B7B",
+        "card-bg": "#EBEBEB",
+      }
     },
   },
-  plugins: [],
+  plugins: [require('@headlessui/tailwindcss')],
 };

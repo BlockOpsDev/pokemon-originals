@@ -15,10 +15,10 @@ const Button: React.FC<Props> = ({
 }) => {
   return (
     <button
-      className={`px-4 py-2 rounded-lg w-40 h-10 flex items-center justify-center ${
+      className={`bg-black px-4 py-2 rounded-lg w-full h-full font-extrabold font-roboto flex items-center justify-center ${
         isEnabled && !isLoading
-          ? "bg-black text-white font-bold hover:bg-gray-900"
-          : "bg-gray-700"
+          ? "text-white hover:bg-opacity-60"
+          : "bg-opacity-60"
       }`}
       disabled={!isEnabled}
       onClick={onClick}

@@ -33,10 +33,10 @@ export default function Navbar() {
   }, [showMenu]);
 
   return (
-    <nav className="bg-white fixed w-full">
-      <div className="max-w-7xl mx-auto px-2 md:px-4 bg-purple-500">
-        <div className="h-16 bg-red-500">
-          <div className="relative float-left h-full w-48 bg-green-500">
+    <nav className="bg-white fixed w-full top-0">
+      <div className="max-w-7xl mx-auto px-2 md:px-4">
+        <div className="h-16">
+          <div className="relative float-left h-full w-48 ">
             <Image
               src="/images/logo.png"
               alt="logo"
@@ -44,8 +44,12 @@ export default function Navbar() {
               objectFit="contain"
             />
           </div>
-          <div className="bg-yellow-500 -translate-y-full fixed inset-x-0 bottom-0 w-screen h-[calc(100vh-76px)] flex items-center md:translate-y-0 md:w-max md:relative md:float-right md:h-full">
-            <div className="flex items-center justify-end text-black text-base font-bold bg-blue-500">
+          <div
+            className={`fixed inset-x-0 bottom-0 w-screen h-[calc(100vh-76px)] flex items-center md:translate-y-0 md:w-max md:relative md:float-right md:h-full transition ease-in-out md:transition-none ${
+              showMenu ? "translate-y-0" : "translate-y-full"
+            }`}
+          >
+            <div className="flex items-center justify-end text-black text-base font-bold font-poppins">
               {NavLinks.map((link, index) => (
                 <a
                   key={index}
@@ -56,11 +60,11 @@ export default function Navbar() {
                 </a>
               ))}
             </div>
-            <div className="flex items-center justify-center bg-orange-500">
+            <div className="flex items-center justify-center">
               <Connect />
             </div>
           </div>
-          <div className="flex h-full items-center float-right bg-yellow-500">
+          <div className="flex h-full items-center float-right">
             <button
               type="button"
               className="md:hidden inline-flex items-center justify-center p-2 rounded-md text-black"

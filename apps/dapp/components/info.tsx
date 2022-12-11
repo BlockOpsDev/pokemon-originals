@@ -8,11 +8,11 @@ const Info: React.FC<{ title: string; children?: React.ReactNode }> = ({
   children,
 }) => {
   return (
-    <div className="m-3 w-auto">
-      <span className="text-sm font-bold text-center text-slate-300">
+    <div className="mb-4 w-full">
+      <div className="text-sm font-bold font-poppins text-left text-secondary-text mb-2">
         {title}
-      </span>
-      <div className="rounded-lg w-full h-full text-gray-700 bg-slate-300 p-3">
+      </div>
+      <div className="rounded-lg w-full h-full font-roboto text-black bg-card-bg p-3">
         {children}
       </div>
     </div>

@@ -18,7 +18,16 @@ const TxSummary: React.FC<TxSummaryProps> = ({ state }) => {
   if (state.isLoading)
     return (
       <Info title="What does this mean?">
-        <p>This is a summary of the transaction you are about to make.</p>
+        <p>
+          Holders of Logan’s Pokemon NFTs are entitled to ETH Royalty Rewards
+          from the 99 Originals’ auctions.
+        </p>
+        <br />
+        <p>
+          On Dec X, 2022, a snapshot was taken of all eligible holders. Connect
+          your wallet and click the button below to see if you qualify for
+          rewards.
+        </p>
       </Info>
     );
 

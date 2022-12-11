@@ -1,5 +1,7 @@
 import type { AppProps } from "next/app";
-import { WagmiConfig, createClient, configureChains, chain } from "wagmi";
+import { WagmiConfig, createClient, configureChains } from "wagmi";
+import { localhost } from "wagmi/chains";
+import { publicProvider } from "wagmi/providers/public";
 import { jsonRpcProvider } from "wagmi/providers/jsonRpc";
 import { MetaMaskConnector } from "wagmi/connectors/metaMask";
 import { WalletConnectConnector } from "wagmi/connectors/walletConnect";
@@ -7,13 +9,14 @@ import { ConnectKitProvider } from "connectkit";
 import "../styles/globals.css";
 
 const { chains, provider } = configureChains(
-  [chain.localhost, chain.polygonMumbai, chain.polygon],
+  [localhost],
   [
     jsonRpcProvider({
       rpc: (_) => ({
         http: `http://127.0.0.1:8545/`,
       }),
     }),
+    publicProvider(),
   ]
 );
 

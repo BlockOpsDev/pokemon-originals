@@ -1,11 +1,6 @@
 import ClaimCard from "@components/ClaimCard/card";
-import Connect from "@components/connect";
 import Navbar from "@components/navbar";
-import Button from "@components/primaryButton";
-import { useModal } from "connectkit";
-import useClaim from "hooks/useClaim";
 import Image from "next/image";
-import { useAccount, useConnect } from "wagmi";
 
 export default function Index() {
   return (

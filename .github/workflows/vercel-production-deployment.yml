@@ -12,6 +12,7 @@ on:
 jobs:
   vercel-production-deployment:
     runs-on: ubuntu-latest
+    environment: mainnet
     steps:
       - uses: actions/checkout@v2
 

@@ -3,6 +3,9 @@ name: Vercel Production Deployment
 env:
   VERCEL_ORG_ID: ${{ secrets.VERCEL_ORG_ID }}
   VERCEL_PROJECT_ID: ${{ secrets.VERCEL_PROJECT_ID }}
+  WORKER_KV_KEY: ${{ secrets.WORKER_KV_KEY }}
+  WORKER_ACCOUNT_ID: ${{ secrets.WORKER_ACCOUNT_ID }}
+  WORKER_KV_NAMESPACE: ${{ secrets.WORKER_KV_NAMESPACE }}
 
 on:
   push:
@@ -12,7 +15,9 @@ on:
 jobs:
   vercel-production-deployment:
     runs-on: ubuntu-latest
-    environment: mainnet
+    environment:
+      name: mainnet
+      url: https://pokemon-originals-blockops.vercel.app/
     steps:
       - uses: actions/checkout@v2
 
@@ -27,10 +32,6 @@ jobs:
       - name: Vercel Deploy
         uses: amondnet/vercel-action@v20
         with:
-          # Github Issue Config
-          # github-token: ${{ secrets.GITHUB_TOKEN }
-          # github-comment: true
-
           # Vercel Credentials
           vercel-token: ${{ secrets.VERCEL_TOKEN }}
           vercel-org-id: ${{ secrets.VERCEL_ORG_ID }}

@@ -11,19 +11,12 @@ const Connect: React.FC<Props> = ({ connectMessage }) => {
 
   return (
     <ConnectKitButton.Custom>
-      {({
-        isConnected,
-        isConnecting,
-        show,
-        address,
-        ensName,
-        truncatedAddress,
-      }) => {
+      {({ isConnected, isConnecting, show, address }) => {
         return (
           <Button
             message={
               isConnected && address
-                ? ensName ?? truncatedAddress!
+                ? "Disconnect Wallet"
                 : connectMessage ?? "Connect Wallet"
             }
             isLoading={(!isConnected || !address) && (isConnecting || open)}

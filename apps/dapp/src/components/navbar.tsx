@@ -67,7 +67,7 @@ const Navbar: React.FC = () => {
                   </div>
                 </div>
               </div>
-              <div className="absolute inset-y-0 right-0 flex hidden items-center pr-2 md:static md:inset-auto md:ml-6 md:block md:pr-0">
+              <div className="absolute inset-y-0 right-0 hidden items-center pr-2 md:static md:inset-auto md:ml-6 md:block md:pr-0">
                 <Connect />
               </div>
             </div>
@@ -82,12 +82,15 @@ const Navbar: React.FC = () => {
                   as="a"
                   href={item.href}
                   className={
-                    "block rounded-md px-3 py-2 text-base font-medium text-gray-300 hover:bg-gray-700 hover:text-white"
+                    "font-poppins block px-3 py-2 text-base font-bold text-black hover:text-gray-700"
                   }
                 >
                   {item.name}
                 </Disclosure.Button>
               ))}
+            </div>
+            <div className="mx-3 mb-4 flex w-5/12 items-center justify-start md:hidden">
+              <Connect />
             </div>
           </Disclosure.Panel>
         </>

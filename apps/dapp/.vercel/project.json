@@ -1,0 +1,15 @@
+{
+  "projectId": "$VERCEL_PROJECT_ID",
+  "orgId": "$VERCEL_ORG_ID",
+  "settings": {
+    "createdAt": 1669996333256,
+    "framework": "nextjs",
+    "devCommand": null,
+    "installCommand": "cd ../.. && pnpm install",
+    "buildCommand": "cd ../.. && pnpm build",
+    "outputDirectory": null,
+    "rootDirectory": "./",
+    "directoryListing": false,
+    "nodeVersion": "18.x"
+  }
+}

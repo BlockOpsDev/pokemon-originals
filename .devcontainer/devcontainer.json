@@ -1,0 +1,40 @@
+// For format details, see https://aka.ms/devcontainer.json. For config options, see the
+// README at: https://github.com/devcontainers/templates/tree/main/src/javascript-node
+{
+	"name": "Node.js",
+	"image": "mcr.microsoft.com/devcontainers/javascript-node:16-bullseye",
+	// Features to add to the dev container. More info: https://containers.dev/features.
+	"features": {
+		"ghcr.io/nicoviii/devcontainer-features/pnpm:latest": {}
+	},
+	// Configure tool-specific properties.
+	"customizations": {
+		// Configure properties specific to VS Code.
+		"vscode": {
+			"settings": {},
+			"extensions": [
+				"dbaeumer.vscode-eslint",
+				"NomicFoundation.hardhat-solidity",
+				"bradlc.vscode-tailwindcss",
+				"GitHub.copilot",
+				"esbenp.prettier-vscode"
+			]
+		}
+	},
+	// Use 'forwardPorts' to make a list of ports inside the container available locally.
+	"forwardPorts": [
+		3000,
+		8545
+	],
+	// Use 'portsAttributes' to set default properties for specific forwarded ports.
+	"portsAttributes": {
+		"3000": {
+			"label": "Frontend Dapp"
+		},
+		"8545": {
+			"label": "Ethereum RPC"
+		}
+	},
+	// Use 'postCreateCommand' to run commands after the container is created.
+	"postCreateCommand": "pnpm install"
+}

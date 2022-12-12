@@ -1,0 +1,41 @@
+name: Vercel Production Deployment
+
+env:
+  VERCEL_ORG_ID: ${{ secrets.VERCEL_ORG_ID }}
+  VERCEL_PROJECT_ID: ${{ secrets.VERCEL_PROJECT_ID }}
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  vercel-production-deployment:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Install PNPM
+        uses: pnpm/action-setup@v2
+
+      - name: Vercel Production Build
+        run: |
+          pnpm install --global vercel
+          vercel build --cwd apps/dapp --prod
+
+      - name: Vercel Deploy
+        uses: amondnet/vercel-action@v20
+        with:
+          # Github Issue Config
+          # github-token: ${{ secrets.GITHUB_TOKEN }
+          # github-comment: true
+
+          # Vercel Credentials
+          vercel-token: ${{ secrets.VERCEL_TOKEN }}
+          vercel-org-id: ${{ secrets.VERCEL_ORG_ID }}
+          scope: ${{ secrets.VERCEL_ORG_ID }}
+          vercel-project-id: ${{ secrets.VERCEL_PROJECT_ID }}
+
+          # Vercel Configuration
+          working-directory: apps/dapp
+          vercel-args: --prod --prebuilt --yes

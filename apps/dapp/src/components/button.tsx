@@ -14,7 +14,7 @@ const Button: React.FC<Props> = ({
 }) => {
   return (
     <button
-      className={`bg-black text-white px-4 py-2 rounded-lg w-full h-full font-extrabold font-roboto flex items-center justify-center ${
+      className={`font-roboto flex h-full w-full items-center justify-center rounded-lg bg-black px-4 py-2 font-extrabold text-white ${
         isEnabled && !isLoading ? "hover:bg-opacity-60" : "bg-opacity-60"
       }`}
       disabled={!isEnabled || isLoading}
@@ -22,7 +22,7 @@ const Button: React.FC<Props> = ({
     >
       {isLoading ? (
         <svg
-          className="animate-spin h-5 w-5 text-white"
+          className="h-5 w-5 animate-spin text-white"
           xmlns="http://www.w3.org/2000/svg"
           fill="none"
           viewBox="0 0 24 24"

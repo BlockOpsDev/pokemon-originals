@@ -1,0 +1,48 @@
+name: Vercel Preview Deployment
+
+env:
+  VERCEL_ORG_ID: ${{ secrets.VERCEL_ORG_ID }}
+  VERCEL_PROJECT_ID: ${{ secrets.VERCEL_PROJECT_ID }}
+  
+on:
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  vercel-preview-deployment:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Install PNPM
+        uses: pnpm/action-setup@v2
+
+      - name: Vercel Production Build
+        run: |
+          pnpm install --global vercel
+          vercel build --cwd apps/dapp
+
+      - name: Vercel Deploy
+        id: vercel_deployment
+        uses: amondnet/vercel-action@v20
+        with:
+          # Vercel Credentials
+          vercel-token: ${{ secrets.VERCEL_TOKEN }}
+          vercel-org-id: ${{ secrets.VERCEL_ORG_ID }}
+          scope: ${{ secrets.VERCEL_ORG_ID }}
+          vercel-project-id: ${{ secrets.VERCEL_PROJECT_ID }}
+          # Vercel Configuration
+          working-directory: apps/dapp
+          vercel-args: --prebuilt --yes
+
+      - name: Vercel Status Comment
+        uses: actions/github-script@v5
+        with:
+          script: | 
+            github.rest.issues.createComment({
+              issue_number: context.issue.number,
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              body: '🚀 **Preview Deployment:** ' + '${{ steps.vercel_deployment.outputs.preview-url }}'
+            })

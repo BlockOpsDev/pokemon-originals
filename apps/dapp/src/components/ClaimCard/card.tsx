@@ -19,20 +19,20 @@ const ClaimCard: React.FC = () => {
   }, [claimState.error, claimState.isError]);
 
   return (
-    <div className="w-full h-full">
-      <div className="text-black text-3xl font-extrabold font-poppins mb-4">
+    <div className="h-full w-full">
+      <div className="font-poppins mb-4 text-3xl font-extrabold text-black">
         Reward Distributions
       </div>
       <TxSummary state={claimState} />
-      <div className="flex justify-center h-12 text-2xl mb-4">
+      <div className="mb-4 flex h-12 justify-center text-2xl">
         {isConnected && address ? (
           <ClaimButton claim={claim} retry={retry} state={claimState} />
         ) : (
           <Connect connectMessage="Check Eligibility" />
         )}
       </div>
-      <div className="text-black border rounded-xl border-card-bg p-3">
-        <div className="font-bold font-poppins mb-2">Disclaimer</div>
+      <div className="border-card-bg rounded-xl border p-3 text-black">
+        <div className="font-poppins mb-2 font-bold">Disclaimer</div>
         <div className="font-roboto">
           <p>
             Eligible holders have until January X, 2023, to claim any

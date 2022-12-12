@@ -5,7 +5,7 @@ env:
   VERCEL_PROJECT_ID: ${{ secrets.VERCEL_PROJECT_ID }}
   WORKER_KV_KEY: ${{ secrets.WORKER_KV_KEY }}
   WORKER_ACCOUNT_ID: ${{ secrets.WORKER_ACCOUNT_ID }}
-  WORKER_KV_NAMESPACE: ${{ secrets.WORKER_KV_NAMESPACE }}
+  WORKER_KV_NAMESPACE_ID: ${{ secrets.WORKER_KV_NAMESPACE_ID }}
 
 on:
   push:

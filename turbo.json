@@ -1,6 +1,6 @@
 {
   "$schema": "https://turbo.build/schema.json",
-  "globalDependencies": [
+  "globalEnv": [
     "$WORKER_KV_KEY",
     "$WORKER_ACCOUNT_ID",
     "$WORKER_KV_NAMESPACE_ID"

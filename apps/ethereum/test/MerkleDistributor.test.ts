@@ -2,8 +2,8 @@ import { SignerWithAddress } from '@nomiclabs/hardhat-ethers/signers'
 import chai, { expect } from 'chai'
 import { BigNumber, constants, Contract, ContractFactory } from 'ethers'
 import { ethers } from 'hardhat'
-import BalanceTree from '../src/balance-tree'
-import { parseBalanceMap } from '../src/parse-balance-map'
+import BalanceTree from '../scripts/utils/balance-tree'
+import { parseBalanceMap } from '../scripts/utils/parse-balance-map'
 
 // chai.use(solidity)
 

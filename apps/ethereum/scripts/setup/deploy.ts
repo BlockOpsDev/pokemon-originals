@@ -1,7 +1,7 @@
 require('@nomiclabs/hardhat-ethers')
 import { BigNumber } from 'ethers'
 import fs from 'fs'
-import { MockERC20 } from '../typechain-types'
+import { MockERC20 } from '../../typechain-types'
 const { ethers } = require('hardhat')
 
 async function main() {

@@ -7,12 +7,12 @@ const config: HardhatUserConfig = {
       chainId: 1337
     },
     mainnet: {
-      url: process.env.MAINNET_RPC_URL,
+      url: "https://polygon-rpc.com/",
       accounts: [process.env.PRIVATE_KEY],
       saveDeployments: true,
     },
     testnet: {
-      url: process.env.TESTNET_RPC_URL,
+      url: "https://matic-mumbai.chainstacklabs.com",
       accounts: [process.env.PRIVATE_KEY],
       saveDeployments: true,
     }

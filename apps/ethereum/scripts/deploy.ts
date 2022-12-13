@@ -16,9 +16,11 @@ async function main() {
     0
   )
   await mockERC20.deployed()
- 
-  // Deploy MerkleDistributor
+  console.log(`mockERC20 deployed to: ${mockERC20.address}`);
+
+  // Read merkle tree from file
   const merkleTree = JSON.parse(fs.readFileSync('./scripts/data/merkleDistribution.json', 'utf8'))
+  // Deploy MerkleDistributor
   const MerkleDistributorWithDeadline = await ethers.getContractFactory('MerkleDistributorWithDeadline')
   const merkleDistributorWithDeadline = await MerkleDistributorWithDeadline.deploy(
     // ERC20 token address
@@ -29,9 +31,10 @@ async function main() {
     1688493524
   )
   await merkleDistributorWithDeadline.deployed()
-  console.log(`merkleDistributorWithDeadline deployed at ${merkleDistributorWithDeadline.address}`)
+  console.log(`merkleDistributorWithDeadline deployed to: ${merkleDistributorWithDeadline.address}`)
 
   await mockERC20.setBalance(merkleDistributorWithDeadline.address, BigNumber.from(merkleTree.tokenTotal))
+  console.log(`mockERC20 balance of merkleDistributorWithDeadline: ${await mockERC20.balanceOf(merkleDistributorWithDeadline.address)}`)
 }
 
 main()

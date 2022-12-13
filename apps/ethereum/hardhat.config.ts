@@ -6,6 +6,20 @@ const config: HardhatUserConfig = {
     hardhat: {
       chainId: 1337
     },
+    mainnet: {
+      url: process.env.MAINNET_RPC_URL,
+      accounts: [process.env.PRIVATE_KEY],
+      saveDeployments: true,
+    },
+    testnet: {
+      url: process.env.TESTNET_RPC_URL,
+      accounts: [process.env.PRIVATE_KEY],
+      saveDeployments: true,
+    }
+  },
+  etherscan: {
+    apiKey: process.env.ETHERSCAN_API_KEY
+  }
   },
   solidity: {
     compilers: [

@@ -3,15 +3,16 @@ dotEnvConfig();
 
 import axios from "axios";
 
-const options = (address: string) => {
+const options = (address: string, id: string | number, cursor?: string) => {
   return {
     method: "GET",
-    url: `https://deep-index.moralis.io/api/v2/nft/${address}/owners`,
+    url: `https://deep-index.moralis.io/api/v2/nft/${address}/${id}/owners`,
     params: {
       chain: "polygon",
       format: "decimal",
       normalizeMetadata: "false",
-      limit: 100,
+      limit: 10,
+      cursor,
     },
     headers: {
       accept: "application/json",
@@ -52,11 +53,21 @@ type moralisResponse = {
 
 export const holders = async <T>(
   contract: `0x${string}`,
+  id: string | number,
   callback: (data: moralisResponse["result"][number]) => T
-) => {
-  const { data } = await axios<moralisResponse>(options(contract));
+): Promise<void> => {
+  let cursor = "";
 
-  return data.result.map((holder: moralisResponse["result"][number]) =>
-    callback(holder)
-  );
+  do {
+    const { data } = await axios<moralisResponse>(
+      options(contract, id, cursor)
+    );
+
+    for (const holder of data.result) {
+      await Promise.resolve(callback(holder));
+    }
+
+    console.log(`Fetched ${holders.length} holders`);
+    cursor = data.cursor;
+  } while (cursor && holders.length < 20);
 };

@@ -1,6 +1,13 @@
 {
   "$schema": "https://turbo.build/schema.json",
-  "globalEnv": ["WORKER_KV_KEY", "WORKER_ACCOUNT_ID", "WORKER_KV_NAMESPACE_ID"],
+  "globalEnv": [
+    "WORKER_KV_KEY",
+    "WORKER_ACCOUNT_ID",
+    "WORKER_KV_NAMESPACE_ID",
+    "PRIVATE_KEY",
+    "ETHERSCAN_KEY",
+    "MORALIS_KEY"
+  ],
   "pipeline": {
     "build": {
       "dependsOn": ["^build"],

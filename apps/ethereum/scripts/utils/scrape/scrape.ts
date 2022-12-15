@@ -67,7 +67,6 @@ export const holders = async <T>(
       await Promise.resolve(callback(holder));
     }
 
-    console.log(`Fetched ${holders.length} holders`);
     cursor = data.cursor;
-  } while (cursor && holders.length < 20);
+  } while (cursor);
 };

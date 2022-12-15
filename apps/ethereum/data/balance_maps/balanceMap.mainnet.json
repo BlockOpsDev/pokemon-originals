@@ -1,0 +1,101 @@
+{
+  "0x47b4f7c8fa2b4334b86581f6f0e2dec72ae4fa08": {
+    "totalReward": "1000000000000000000000",
+    "nfts": {
+      "Matte Black": { "quantity": "1", "reward": "1000000000000000000000" }
+    }
+  },
+  "0x208b82b04449cd51803fae4b1561450ba13d9510": {
+    "totalReward": "2000000000000000000000",
+    "nfts": {
+      "Matte Black": { "quantity": "1", "reward": "1000000000000000000000" },
+      "Holo": { "quantity": "1", "reward": "1000000000000000000000" }
+    }
+  },
+  "0xd66c178d78a1207c52be3aeecf7a5ff440910d09": {
+    "totalReward": "2000000000000000000000",
+    "nfts": {
+      "Matte Black": { "quantity": "2", "reward": "2000000000000000000000" }
+    }
+  },
+  "0x68ecb733baf087c3facfff6ea87158d79bdaab90": {
+    "totalReward": "1000000000000000000000",
+    "nfts": { "Holo": { "quantity": "1", "reward": "1000000000000000000000" } }
+  },
+  "0x5451ef5aa55c7c812ddd9fd6396b65eaedebfd80": {
+    "totalReward": "1000000000000000000000",
+    "nfts": { "Holo": { "quantity": "1", "reward": "1000000000000000000000" } }
+  },
+  "0x633ebec7a21c2df30fd686d17d0bf688b87b12d3": {
+    "totalReward": "1000000000000000000000",
+    "nfts": { "Holo": { "quantity": "1", "reward": "1000000000000000000000" } }
+  },
+  "0x4e7a997ebe645a7cc55eda6a5b584fa4a31690cf": {
+    "totalReward": "2000000000000000000000",
+    "nfts": { "Holo": { "quantity": "2", "reward": "2000000000000000000000" } }
+  },
+  "0x2772a2b7b37108fc80afb864084b7897e8f232ef": {
+    "totalReward": "1000000000000000000000",
+    "nfts": {
+      "Holo": { "quantity": "10", "reward": "1000000000000000000000" }
+    }
+  },
+  "0xc041e75fe7f56c5388483b60d8500c4c1045d39c": {
+    "totalReward": "13000000000000000000000",
+    "nfts": {
+      "Holo": { "quantity": "13", "reward": "13000000000000000000000" }
+    }
+  },
+  "0xe065550fe104e7bf83ea725f831cb9072e4906b3": {
+    "totalReward": "2000000000000000000000",
+    "nfts": { "Holo": { "quantity": "2", "reward": "2000000000000000000000" } }
+  },
+  "0x520cd251f4cc1a7799e261f15cedea742f8f8f6e": {
+    "totalReward": "1000000000000000000000",
+    "nfts": { "Holo": { "quantity": "1", "reward": "1000000000000000000000" } }
+  },
+  "0xfa931b8c40cd22263cd685927901116d10f1c223": {
+    "totalReward": "1000000000000000000000",
+    "nfts": { "Holo": { "quantity": "1", "reward": "1000000000000000000000" } }
+  },
+  "0xd53ff8a8d3882be94d68b82e7789d466617280cf": {
+    "totalReward": "2000000000000000000000",
+    "nfts": { "Holo": { "quantity": "2", "reward": "2000000000000000000000" } }
+  },
+  "0xd0019c5bc6e463ebb408041cabe5df25b975f216": {
+    "totalReward": "1000000000000000000000",
+    "nfts": { "Holo": { "quantity": "1", "reward": "1000000000000000000000" } }
+  },
+  "0xc5977331fcc3b7632f40e5594414e0c4fd5f164d": {
+    "totalReward": "4000000000000000000000",
+    "nfts": { "Holo": { "quantity": "4", "reward": "4000000000000000000000" } }
+  },
+  "0xbe1e4886070a46cb7045867f2064ab516f1290f5": {
+    "totalReward": "1000000000000000000000",
+    "nfts": { "Holo": { "quantity": "1", "reward": "1000000000000000000000" } }
+  },
+  "0xb4c404289fcd83f7099d9cde49d086757a6824cf": {
+    "totalReward": "1000000000000000000000",
+    "nfts": { "Holo": { "quantity": "1", "reward": "1000000000000000000000" } }
+  },
+  "0xae340ce6d34330fe55ebadde52af2027dea98108": {
+    "totalReward": "1000000000000000000000",
+    "nfts": { "Holo": { "quantity": "1", "reward": "1000000000000000000000" } }
+  },
+  "0x5763d2144c813ae021a60f1bc4528a573c57176a": {
+    "totalReward": "2000000000000000000000",
+    "nfts": { "Holo": { "quantity": "2", "reward": "2000000000000000000000" } }
+  },
+  "0x3331e62231094a616b4ffbbaa7ea8ba3326e6787": {
+    "totalReward": "1000000000000000000000",
+    "nfts": { "Holo": { "quantity": "1", "reward": "1000000000000000000000" } }
+  },
+  "0x0a32aff863bcf59c990ffbe3bb9da018d4723acf": {
+    "totalReward": "1000000000000000000000",
+    "nfts": { "Holo": { "quantity": "1", "reward": "1000000000000000000000" } }
+  },
+  "0x06ae6033e9ab6d019716e43e9cf4518ff1e03871": {
+    "totalReward": "3000000000000000000000",
+    "nfts": { "Holo": { "quantity": "3", "reward": "3000000000000000000000" } }
+  }
+}

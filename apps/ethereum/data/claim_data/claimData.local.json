@@ -1,0 +1,84 @@
+{
+  "merkleRoot": "0x441503f47c7fff13d1626b782b6a4f6b037c5ae932920ba7d2d4c3172612428f",
+  "tokenTotal": "0x54d94a9b4cbd0000",
+  "claims": {
+    "0x15d34AAf54267DB7D7c367839AAf71A00a2C6A65": {
+      "leaf": {
+        "index": 0,
+        "amount": "0x186cc6acd4b00000",
+        "proof": [
+          "0x3e341a2a5736aa9668e37f14ea92d365cf109f07cbb11987d290347220757928",
+          "0xda42b4e55cfd3cce521d2e7fa84694f1e1502b30b183d698f4676e9ff9c6a703",
+          "0x232af2a2ff436acf879929aefba56873703e8edb6178f57a9561b5ad0c528abe"
+        ]
+      },
+      "nfts": { "Holo": { "quantity": "2", "reward": "1760000000000000000" } }
+    },
+    "0x3C44CdDdB6a900fa2b585dd299e03d12FA4293BC": {
+      "leaf": {
+        "index": 1,
+        "amount": "0x01717b72f0a40000",
+        "proof": [
+          "0x822b6f63459c8750e8529f3215bfc9bb0d705aff9ef84003277cbf92e9b24fe2",
+          "0xda42b4e55cfd3cce521d2e7fa84694f1e1502b30b183d698f4676e9ff9c6a703",
+          "0x232af2a2ff436acf879929aefba56873703e8edb6178f57a9561b5ad0c528abe"
+        ]
+      },
+      "nfts": { "Silver": { "quantity": "4", "reward": "104000000000000000" } }
+    },
+    "0x70997970C51812dc3A010C7d01b50e0d17dc79C8": {
+      "leaf": {
+        "index": 2,
+        "amount": "0x11c37937e08000",
+        "proof": [
+          "0xf69b53a80a4365ac3e5bafaa311b93772dbbae0dd8b648f05cc5a7369c01a907",
+          "0xe7319b965068ddd53505f476b19d79c043c517b7d7a2ca8b189b41a404b5d54f"
+        ]
+      },
+      "nfts": { "Static": { "quantity": "5", "reward": "5000000000000000" } }
+    },
+    "0x90F79bf6EB2c4f870365E785982E1f101E93b906": {
+      "leaf": {
+        "index": 3,
+        "amount": "0x0753d533d9680000",
+        "proof": [
+          "0xa2c7ef95541d121f72ec9a533feccd3febddd9e1d4eda9893491a58afbfdc681",
+          "0x990ec07a3ed94a74b1502a914e8e8da571559465b8261afdcef64fbe1434c321",
+          "0x232af2a2ff436acf879929aefba56873703e8edb6178f57a9561b5ad0c528abe"
+        ]
+      },
+      "nfts": { "Gold": { "quantity": "3", "reward": "528000000000000000" } }
+    },
+    "0x976EA74026E726554dB657fA54763abd0C3a0aa9": {
+      "leaf": {
+        "index": 4,
+        "amount": "0x2a6ca54da65e8000",
+        "proof": [
+          "0xe83717536ac1743176c95e6bc5086893d951130de5f919cffdbed1c1a66fdf98",
+          "0xe7319b965068ddd53505f476b19d79c043c517b7d7a2ca8b189b41a404b5d54f"
+        ]
+      },
+      "nfts": {
+        "Static": { "quantity": "5", "reward": "5000000000000000" },
+        "Silver": { "quantity": "4", "reward": "104000000000000000" },
+        "Gold": { "quantity": "3", "reward": "528000000000000000" },
+        "Holo": { "quantity": "2", "reward": "1760000000000000000" },
+        "Matte Black": { "quantity": "1", "reward": "660000000000000000" }
+      }
+    },
+    "0x9965507D1a55bcC2695C58ba16FB37d819B0A4dc": {
+      "leaf": {
+        "index": 5,
+        "amount": "0x0928ca80cfc20000",
+        "proof": [
+          "0xe41407c0cf685844a58b19219ca12d53b9fd4e67c6333609e1d41719075052f0",
+          "0x990ec07a3ed94a74b1502a914e8e8da571559465b8261afdcef64fbe1434c321",
+          "0x232af2a2ff436acf879929aefba56873703e8edb6178f57a9561b5ad0c528abe"
+        ]
+      },
+      "nfts": {
+        "Matte Black": { "quantity": "1", "reward": "660000000000000000" }
+      }
+    }
+  }
+}
